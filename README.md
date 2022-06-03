@@ -5,7 +5,7 @@ This a temporary hack to enable systemd user session in WSL when using [wsl-dist
 
 # Usage
 
-`make config` will compile, install it to /bin/gbash, then configure shell using chsh and run `distrod enable`.
+`make config` will compile, install it to `/bin/gbash`, then configure shell using `chsh` and run `distrod enable`.
 `make unconfig` to undo.
 
 After running `make config` open a new terminal tab, you should be placed inside a systemd user session enabled shell. To verify
