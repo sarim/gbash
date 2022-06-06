@@ -14,13 +14,14 @@ func main() {
 		args = append(args, "--setenv="+env)
 	}
 
-	if _, is := os.LookupEnv("WINDOWS_PATH"); !is {
-		args = append(args, "--setenv=WINDOWS_PATH="+os.Getenv("PATH"))
-	}
+	// if _, is := os.LookupEnv("WINDOWS_PATH"); !is {
+	// 	args = append(args, "--setenv=WINDOWS_PATH="+os.Getenv("PATH"))
+	// }
 
 	shell := "/bin/bash"
 
 	args = append(args, shell)
+	args = append(args, "-l")
 	args = append(args, os.Args[1:]...)
 
 	c := exec.Command("systemd-run", args...)

@@ -25,9 +25,3 @@ You can see XDG env variables are set. You can also run `systemctl --user status
 # Known Issue
 
 1. It fails when terminal is launched for the first time, as it can't find systemd.You can close the failed and open new tabs. It works from now on.
-
-2. `PATH` env passed from windows gets lost. As a workaround I placed them in `WINDOWS_PATH` env var. You can load them from `.bashrc`. I have this snippet at the start of `.bashrc`:
-
-    ```bash
-    [ -z "$WINDOWS_PATH" ] || export PATH=$PATH:$WINDOWS_PATH
-    ```
