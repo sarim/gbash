@@ -1,12 +1,25 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"strconv"
+	"time"
 )
 
+func isNotSystemdSocket() bool {
+	_, err := os.Stat("/var/run/dbus/system_bus_socket")
+
+	return os.IsNotExist(err)
+}
+
 func main() {
+	for e := isNotSystemdSocket(); e; {
+		fmt.Println("Waiting for system socket")
+		time.Sleep(100 * time.Millisecond)
+		e = isNotSystemdSocket()
+	}
 
 	args := []string{"--quiet", "--pty", "--same-dir", "--wait", "--collect", "--service-type=simple", "--uid=" + strconv.Itoa(os.Getuid()), "--property=PAMName=login", "--send-sighup"}
 

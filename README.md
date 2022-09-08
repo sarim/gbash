@@ -24,4 +24,5 @@ You can see XDG env variables are set. You can also run `systemctl --user status
 
 # Known Issue
 
-1. It fails when terminal is launched for the first time, as it can't find systemd.You can close the failed and open new tabs. It works from now on.
+1. ~~It fails when terminal is launched for the first time, as it can't find systemd.You can close the failed and open new tabs. It works from now on.~~
+No longer an issue, workaround implemented.
