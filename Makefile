@@ -8,6 +8,7 @@ install: gbash
 	sudo cp ./gbash /bin/gbash
 	sudo chown root:root /bin/gbash
 	sudo chmod u+sx /bin/gbash
+	sudo sed -i '/gbash/d' /etc/shells
 	sudo echo 'bin/gbash' >> /etc/shells
 run: install
 	/bin/gbash
