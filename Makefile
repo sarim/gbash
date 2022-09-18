@@ -13,6 +13,6 @@ run: install
 config: install
 	chsh --shell /bin/gbash
 	sudo /opt/distrod/bin/distrod enable
-unconfig:
-	chsh --shell /bin/bash
+unconfig: clean
+	chsh --shell /bin/zsh
 	sudo /opt/distrod/bin/distrod enable
