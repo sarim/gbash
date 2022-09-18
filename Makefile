@@ -9,7 +9,7 @@ install: gbash
 	sudo chown root:root /bin/gbash
 	sudo chmod u+sx /bin/gbash
 	sudo sed -i '/gbash/d' /etc/shells
-	sudo echo '/bin/gbash' >> /etc/shells
+	echo '/bin/gbash' | sudo tee -a /etc/shells
 run: install
 	/bin/gbash
 config: install
