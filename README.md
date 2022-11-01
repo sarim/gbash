@@ -3,6 +3,9 @@ Bash wrapper shell to run shell inside systemd pam session
 
 This a temporary hack to enable systemd user session in WSL when using [wsl-distrod](https://github.com/nullpo-head/wsl-distrod/).
 
+# Notice: Official microsoft support for systemd is available from WSL version 0.67.6
+Here is the official [announcement article](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/). If you are running windows 11 and able to upgrade WSL to latest versions, I highly recommend using the official wsl systemd. I'd recommend using this only for **windows 10** users.
+
 # Usage
 
 `make config` will compile, install it to `/bin/gbash`, then configure shell using `chsh` and run `distrod enable`.
