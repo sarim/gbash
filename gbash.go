@@ -31,7 +31,7 @@ func main() {
 	// 	args = append(args, "--setenv=WINDOWS_PATH="+os.Getenv("PATH"))
 	// }
 
-	shell := "/bin/bash"
+	shell := "/bin/zsh"
 
 	args = append(args, shell)
 	args = append(args, "-l")
